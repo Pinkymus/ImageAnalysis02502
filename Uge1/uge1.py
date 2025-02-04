@@ -6,7 +6,7 @@ import numpy as np
 import pydicom as dicom
 
 # Directory containing data and images
-in_dir = "data/"
+in_dir = "Uge1/ex1-IntroductionToImageAnalysis/data/"
 
 # X-ray image
 im_name = "metacarpals.png"
