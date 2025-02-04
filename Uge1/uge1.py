@@ -20,10 +20,14 @@ print(im_org.shape)
 
 print(im_org.dtype)
 
-io.imshow(im_org)
-plt.title('Metacarpal image')
-io.show()
+# io.imshow(im_org)
+# plt.title('Metacarpal image')
+# io.show()
 
-io.imshow(im_org, cmap="jet")
-plt.title('Metacarpal image (with colormap)')
+# io.imshow(im_org, cmap="cubehelix")
+# plt.title('Metacarpal image (with colormap)')
+# io.show()
+
+io.imshow(im_org, vmin=50, vmax=220)
+plt.title('Metacarpal image (with gray level scaling)')
 io.show()
