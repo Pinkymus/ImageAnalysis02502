@@ -6,7 +6,7 @@ import numpy as np
 import pydicom as dicom
 
 # Directory containing data and images
-in_dir = "Uge1/ex1-IntroductionToImageAnalysis/data/"
+in_dir = "ex1-IntroductionToImageAnalysis/data/"
 
 # X-ray image
 im_name = "metacarpals.png"
@@ -15,3 +15,15 @@ im_name = "metacarpals.png"
 # Here the directory and the image name is concatenated
 # by "+" to give the full path to the image.
 im_org = io.imread(in_dir + im_name)
+
+print(im_org.shape)
+
+print(im_org.dtype)
+
+io.imshow(im_org)
+plt.title('Metacarpal image')
+io.show()
+
+io.imshow(im_org, cmap="jet")
+plt.title('Metacarpal image (with colormap)')
+io.show()
