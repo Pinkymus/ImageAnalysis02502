@@ -2,7 +2,7 @@ import numpy as np
 
 in_dir = "ex1b-PCA/data/"
 
-txt_name = "iris_data.txt"
+txt_name = "irisdata.txt"
 
 #Exercise 1
 iris_data = np.loadtxt(in_dir + txt_name, comments="%")
