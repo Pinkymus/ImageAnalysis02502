@@ -16,18 +16,34 @@ im_name = "metacarpals.png"
 # by "+" to give the full path to the image.
 im_org = io.imread(in_dir + im_name)
 
+#Exercise 2
 print(im_org.shape)
 
+#Exercise 3
 print(im_org.dtype)
 
+#Exercise 4
 # io.imshow(im_org)
 # plt.title('Metacarpal image')
 # io.show()
 
+#Exercise 5 & 6
 # io.imshow(im_org, cmap="cubehelix")
 # plt.title('Metacarpal image (with colormap)')
 # io.show()
 
-io.imshow(im_org, vmin=50, vmax=220)
-plt.title('Metacarpal image (with gray level scaling)')
+#Exercise 7
+# max = np.max(im_org)
+# min = np.min(im_org)
+
+# print("Highest pixel value, " + max.astype(str))
+# print("Lowest pixel value, " + min.astype(str))
+
+# io.imshow(im_org, vmin=min, vmax=max)
+# plt.title('Metacarpal image (with gray level scaling)')
+# io.show()
+
+#Exercise 8
+plt.hist(im_org.ravel(), bins=256)
+plt.title('Image histogram')
 io.show()
