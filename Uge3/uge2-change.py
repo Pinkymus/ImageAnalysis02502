@@ -57,6 +57,8 @@ def capture_from_camera_and_show_images():
         # Compute difference image
         dif_img = np.abs(new_frame_gray - frame_gray)
 
+        totalDiff = np.sum(dif_img)
+
         # Keep track of frames-per-second (FPS)
         n_frames = n_frames + 1
         elapsed_time = time.time() - start_time
@@ -66,6 +68,7 @@ def capture_from_camera_and_show_images():
         str_out = f"fps: {fps}"
         font = cv2.FONT_HERSHEY_COMPLEX
         cv2.putText(new_frame, str_out, (100, 100), font, 1, 255, 1)
+        cv2.putText(dif_img,"Total diff: " + str(totalDiff),(100,200),font,1,255,1)
 
         # Display the resulting frame
         show_in_moved_window('Input', new_frame, 0, 10)
