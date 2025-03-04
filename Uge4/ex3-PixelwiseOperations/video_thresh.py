@@ -1,10 +1,7 @@
-import time
 import cv2
 import numpy as np
 from skimage.util import img_as_float
-from skimage.util import img_as_ubyte
 from skimage.filters import threshold_otsu
-
 
 def show_in_moved_window(win_name, img, x, y):
     """
@@ -37,6 +34,11 @@ def capture_from_camera_and_show_images():
         exit()
 
     stop = False
+
+    frame_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    frame_float = img_as_float(frame_gray)
+    thres = threshold_otsu(frame_float)
+
     while not stop:
         ret, frame = cap.read()
         if not ret:
@@ -48,10 +50,7 @@ def capture_from_camera_and_show_images():
         frame_float = img_as_float(frame_gray)
 
 
-        thres = threshold_otsu(frame_float)
-
-
-        
+        thres = 0.05 * threshold_otsu(frame_float) + 0.95 * thres
 
         threshholding = np.vectorize(lambda x: 0.0 if x < thres else 1.0)
 
